@@ -1,3 +1,22 @@
-.active2{
-    background-color: red !important;
+// .active2{
+//     background-color: red !important;
+// }
+.navbar{
+    justify-content: space-between;
+    font-size: 16px;
+    height: 50px;
+    a{
+        text-decoration: none;
+        color: white;
+        margin: 0 15px;
+    }
+    button:focus{
+        outline: none;
+    }
 }
+.active2{
+    color: red !important;
+}
+// .material-icons{
+//     padding-top: 10px;
+// }

@@ -1,0 +1,54 @@
+
+<div class="container">
+    <h3>Login</h3>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm.value)">
+      <div class="form-group">
+        <span>Tài khoản</span>
+        <input
+          class="form-control"
+          #TaiKhoan="ngModel"
+          name="TaiKhoan"
+          ngModel
+          required
+        />
+        <ng-container
+          *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+        >
+          <div *ngIf="TaiKhoan.errors.required" class="alert alert-danger">
+            Tài khoản k dc rỗng
+          </div>
+        </ng-container>
+      </div>
+      <div class="form-group">
+        <span>Mật khẩu</span>
+        <input
+          type="password"
+          class="form-control"
+          minlength="6"
+          maxlength="12"
+          #MatKhau="ngModel"
+          name="MatKhau"
+          ngModel
+          required
+        />
+        <ng-container
+          *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+        >
+          <div *ngIf="MatKhau.errors.required" class="alert alert-danger">
+            Mat khau k dc rong
+          </div>
+          <div
+            *ngIf="MatKhau.errors.minlength || MatKhau.errors.maxlength"
+            class="alert alert-danger"
+          >
+            Ky tu 6 - 12
+          </div>
+        </ng-container>
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="!loginForm.valid">
+        Login
+      </button>
+    </form>
+  </div>
+  

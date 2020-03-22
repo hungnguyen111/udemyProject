@@ -1,1 +1,4 @@
-<p>list-course works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="!listCourse"></mat-progress-bar>
+<ng-container *ngFor="let item of listCourse">
+    <app-course [course]="item" class="col-3 cardCourse"></app-course>
+</ng-container>

@@ -1,1 +1,17 @@
-<p>course works!</p>
+<mat-card class="course-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ course.tenKhoaHoc }}</mat-card-title>
+      <mat-card-subtitle>Danh mục: {{ course.danhMucKhoaHoc.tenDanhMucKhoaHoc }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image [src]="course.hinhAnh" [alt]="course.moTa" />
+    <mat-card-content>
+      <p>Số lượng học viên: {{course.soLuongHocVien}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="addCourse(course)">Ghi Danh</button>
+        <button mat-stroked-button color="primary" routerLink="/detail/{{course.maKhoaHoc}}">Chi Tiết</button>
+      <!-- <button mat-button>SHARE</but
+        ton> -->
+    </mat-card-actions>
+  </mat-card>

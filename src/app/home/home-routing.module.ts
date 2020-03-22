@@ -5,6 +5,8 @@ import { TrangchuComponent } from './trangchu/trangchu.component';
 import { DetailComponent } from './detail/detail.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthUserGuard } from '../_core/guards/auth-user.guard';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -14,9 +16,10 @@ const routes: Routes = [
     children: [
       {path: '', component: TrangchuComponent},
       {path: 'trang-chu', component: TrangchuComponent},
-      {path: 'detail', component: DetailComponent},
-      {path: 'checkout', component: CheckoutComponent},
-      {path: 'profile', component: ProfileComponent}
+      {path: 'detail/:id', component: DetailComponent},
+      {path: 'login', component: LoginComponent},
+      {path: 'checkout', component: CheckoutComponent, canActivate: [AuthUserGuard]},
+      {path: 'profile', component: ProfileComponent, canActivate: [AuthUserGuard]}
     ]
   }
 ];

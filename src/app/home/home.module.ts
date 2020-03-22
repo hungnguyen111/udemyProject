@@ -12,13 +12,18 @@ import { ListCourseComponent } from './list-course/list-course.component';
 import { CourseComponent } from './course/course.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from '../material/material.module';
+import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
-  declarations: [HomeComponent, TrangchuComponent, DetailComponent, CheckoutComponent, HeaderComponent, FooterComponent, ListCourseComponent, CourseComponent, ProfileComponent],
+  declarations: [HomeComponent, TrangchuComponent, DetailComponent, CheckoutComponent, HeaderComponent, FooterComponent, ListCourseComponent, CourseComponent, ProfileComponent, LoginComponent],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MaterialModule,
+    FormsModule
   ]
 })
 export class HomeModule { }
